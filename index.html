@@ -3,166 +3,162 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="SAS INFOLABS builds smart systems that run smoothly, stay secure, and grow with your business." />
-    <title>SAS INFOLABS | Calm Intelligence</title>
+    <meta name="description" content="SAS INFOLABS builds AI-powered infrastructure, cyber security, AMC monitoring, smart IoT, and automation systems for modern businesses." />
+    <title>SAS INFOLABS | AI Infrastructure & Intelligent Systems</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles/main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/styles.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <span class="soft-light a" aria-hidden="true"></span>
-      <span class="soft-light b" aria-hidden="true"></span>
-      <span class="soft-light c" aria-hidden="true"></span>
+    <div class="ambient-bg" aria-hidden="true">
+      <span class="orb orb-a"></span>
+      <span class="orb orb-b"></span>
+      <span class="orb orb-c"></span>
+      <canvas id="neuralCanvas"></canvas>
+    </div>
 
-      <header class="site-header">
-        <a class="brand" href="/index.html"><span class="brand-mark"></span><span>SAS INFOLABS</span></a>
-        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-        <nav>
-          <a href="#hero" class="active">Home</a>
-          <a href="#services-flow">Solutions</a>
-          <a href="#connection">Flow</a>
-          <a href="#product-feel">Platform</a>
-          <a href="/platform/index.html">Product</a>
-          <a href="/labs/index.html">Labs</a>
-          <a href="/contact/index.html">Contact</a>
-        </nav>
-      </header>
+    <header class="site-header glass" id="top">
+      <a class="brand" href="/index.html">SAS INFOLABS</a>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <nav>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#ecosystem">Ecosystem</a>
+        <a href="#dashboard">Live System</a>
+        <a href="/technology/index.html">Technology</a>
+        <a href="/about/index.html">About</a>
+        <a href="/contact/index.html">Contact</a>
+      </nav>
+    </header>
 
-      <main>
-        <section class="hero" id="hero">
-          <div class="hero-copy reveal">
-            <span class="pill">Calm Intelligence</span>
-            <h1>Smart Technology That Just Works</h1>
-            <p>We build systems that run smoothly, stay secure, and grow with you.</p>
-            <div class="action-row">
-              <a href="/contact/index.html" class="btn btn-primary">Book a Consultation</a>
-              <a href="/platform/index.html" class="btn btn-secondary">See the Platform</a>
-            </div>
-            <div class="hero-micro">
-              <span>Secure by design</span>
-              <span>Simple to manage</span>
-              <span>Ready to scale</span>
-            </div>
-          </div>
+    <main>
+      <section class="hero section" id="hero">
+        <p class="pill reveal">AI Infrastructure • Cyber Security • Smart IoT • AI Automation</p>
+        <h1 class="reveal">AI-Powered Infrastructure for Modern Businesses</h1>
+        <p class="hero-copy reveal">
+          We build secure AI systems that connect devices, data, monitoring, and automation into one intelligent platform.
+        </p>
+        <div class="cta-row reveal">
+          <a href="/services/index.html" class="btn btn-primary magnetic">Explore AI Capabilities</a>
+          <a href="/contact/index.html" class="btn btn-secondary magnetic">Book Consultation</a>
+        </div>
+        <div class="hero-metrics reveal">
+          <article><strong data-count="180">0</strong><span>Deployments</span></article>
+          <article><strong data-count="430">0</strong><span>Systems Monitored</span></article>
+          <article><strong data-count="12700">0</strong><span>Devices Managed</span></article>
+        </div>
+      </section>
 
-          <div class="hero-visual reveal">
-            <div class="wave-grid"></div>
-            <div class="wave-line"></div>
-            <div class="visual-panel">
-              <div class="status-strip">
-                <div><p>System state</p><strong>Stable</strong></div>
-                <div><p>Threat level</p><strong>Low</strong></div>
-                <div><p>Automation</p><strong>Active</strong></div>
-              </div>
-              <div class="product-panel">
-                <div class="panel-header">
-                  <div><span class="dot"></span> Command view</div>
-                  <p>Updated live</p>
-                </div>
-                <div class="panel-grid">
-                  <article class="metric-chip"><p>Health</p><strong>99.1%</strong><div class="bar"><span style="width:91%"></span></div></article>
-                  <article class="metric-chip"><p>Alerts</p><strong>4 active</strong><div class="bar"><span style="width:38%"></span></div></article>
-                  <article class="metric-chip"><p>Performance</p><strong>73%</strong><div class="bar"><span style="width:73%"></span></div></article>
-                  <article class="metric-chip"><p>Coverage</p><strong>24/7</strong><div class="bar"><span style="width:88%"></span></div></article>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+      <section class="section" id="capabilities">
+        <div class="section-head reveal">
+          <p class="eyebrow">AI Capability Modules</p>
+          <h2>Interactive modules for your core AI operations</h2>
+        </div>
+        <div class="capability-grid">
+          <article class="capability-card tilt reveal">
+            <h3>AI Infrastructure</h3>
+            <p>Cloud-edge architecture, GPU optimization, and scalable AI environments for production workloads.</p>
+          </article>
+          <article class="capability-card tilt reveal">
+            <h3>AI Cyber Security</h3>
+            <p>Threat intelligence with anomaly detection, response automation, and proactive security coverage.</p>
+          </article>
+          <article class="capability-card tilt reveal">
+            <h3>AI Monitoring (AMC)</h3>
+            <p>Continuous health monitoring, predictive alerts, and maintenance recommendations to reduce downtime.</p>
+          </article>
+          <article class="capability-card tilt reveal">
+            <h3>AI Automation</h3>
+            <p>Smart workflows that remove repetitive tasks and keep business operations moving with accuracy.</p>
+          </article>
+          <article class="capability-card tilt reveal">
+            <h3>Smart IoT Systems</h3>
+            <p>Connected device intelligence with real-time telemetry, control loops, and decision-ready insights.</p>
+          </article>
+        </div>
+      </section>
 
-        <section class="section" id="services-flow">
-          <div class="section-intro reveal">
-            <span class="kicker">Service Flow</span>
-            <h2>A connected experience instead of disconnected service cards</h2>
-            <p>Each part of the system is designed to work with the next, so the website feels like one product story from start to finish.</p>
-          </div>
+      <section class="section" id="ecosystem">
+        <div class="section-head reveal">
+          <p class="eyebrow">AI Ecosystem Flow</p>
+          <h2>Devices → Data → AI Engine → Security → Automation → Insights</h2>
+        </div>
+        <div class="ecosystem-flow reveal" role="list">
+          <button class="flow-node active" data-flow="Connected devices stream clean telemetry to the platform." role="listitem">Devices</button>
+          <button class="flow-node" data-flow="Data pipelines organize and process events in real time." role="listitem">Data</button>
+          <button class="flow-node" data-flow="AI models classify patterns and drive smart actions." role="listitem">AI Engine</button>
+          <button class="flow-node" data-flow="Security layer blocks threats and validates unusual behavior." role="listitem">Security</button>
+          <button class="flow-node" data-flow="Automation executes workflows and policy responses instantly." role="listitem">Automation</button>
+          <button class="flow-node" data-flow="Insight layer exposes metrics, trends, and improvement paths." role="listitem">Insights</button>
+        </div>
+        <p class="flow-description reveal" id="flowDescription">Connected devices stream clean telemetry to the platform.</p>
+      </section>
 
-          <div class="flow-stack">
-            <article class="flow-block reveal">
-              <div class="flow-text">
-                <span class="kicker">AI Systems</span>
-                <h3>Smart systems that stay reliable as you grow</h3>
-                <p>We design AI-ready infrastructure that is easy to run, secure to scale, and clear for your team to manage.</p>
-                <ul>
-                  <li>Cloud and edge infrastructure planning</li>
-                  <li>Simple visibility into system health</li>
-                  <li>Built for stable growth, not quick fixes</li>
-                </ul>
-              </div>
-              <div class="flow-visual">
-                <span class="visual-caption">Core operations</span>
-                <div class="visual-grid">
-                  <div class="panel-card"><p>Compute</p><strong>Balanced usage</strong></div>
-                  <div class="panel-card"><p>Storage</p><strong>Elastic ready</strong></div>
-                  <div class="panel-card"><p>Network</p><strong>Low latency</strong></div>
-                  <div class="panel-card"><p>Cloud</p><strong>Hybrid enabled</strong></div>
-                </div>
-              </div>
-            </article>
+      <section class="section" id="dashboard">
+        <div class="section-head reveal">
+          <p class="eyebrow">Live System Experience</p>
+          <h2>Product-style dashboard preview</h2>
+        </div>
+        <div class="dashboard reveal">
+          <article><h3>Infrastructure Health</h3><p>99.1% uptime</p></article>
+          <article><h3>Threat Alerts</h3><p>4 active, auto-prioritized</p></article>
+          <article><h3>AI Analytics</h3><p>+28% process efficiency</p></article>
+          <article><h3>Performance Metrics</h3><p>GPU usage stable at 73%</p></article>
+        </div>
+      </section>
 
-            <article class="flow-block reverse reveal">
-              <div class="flow-text">
-                <span class="kicker">Cyber Security</span>
-                <h3>Protection that feels calm, not complicated</h3>
-                <p>Threat monitoring, anomaly detection, and response workflows are built into the system so security becomes part of daily operations.</p>
-                <ul>
-                  <li>Always-on risk monitoring</li>
-                  <li>Clear alerts your team can understand</li>
-                  <li>Faster response without extra clutter</li>
-                </ul>
-              </div>
-              <div class="flow-visual">
-                <span class="visual-caption">Security layer</span>
-                <div class="visual-grid">
-                  <div class="mini-kpi"><p>Incidents</p><strong>Auto-prioritized</strong></div>
-                  <div class="mini-kpi"><p>Signals</p><strong>Normalized</strong></div>
-                  <div class="mini-kpi"><p>Policies</p><strong>Adaptive</strong></div>
-                  <div class="mini-kpi"><p>Audit</p><strong>Trackable</strong></div>
-                </div>
-              </div>
-            </article>
+      <section class="section" id="stack">
+        <div class="section-head reveal">
+          <p class="eyebrow">Technology Stack Wall</p>
+          <h2>Modern tools behind every intelligent deployment</h2>
+        </div>
+        <div class="stack-wall reveal">
+          <button data-desc="Accelerated AI compute architecture.">NVIDIA</button>
+          <button data-desc="Containerized deployment consistency.">Docker</button>
+          <button data-desc="Orchestrated scale for AI workloads.">Kubernetes</button>
+          <button data-desc="Resilient cloud services for enterprise systems.">AWS</button>
+          <button data-desc="Hybrid cloud and governance tooling.">Azure</button>
+          <button data-desc="Model training and inference framework.">TensorFlow</button>
+          <button data-desc="Flexible deep learning experimentation.">PyTorch</button>
+          <button data-desc="Advanced language and reasoning APIs.">OpenAI APIs</button>
+        </div>
+        <p class="stack-description reveal" id="stackDescription">Hover a technology to view its role in the platform.</p>
+      </section>
 
-            <article class="flow-block reveal">
-              <div class="flow-text">
-                <span class="kicker">Smart Maintenance</span>
-                <h3>Prevent issues before they slow the business down</h3>
-                <p>We use monitoring and maintenance logic that helps your team fix problems early and keep systems working smoothly.</p>
-                <ul>
-                  <li>Health checks that stay consistent</li>
-                  <li>Predictive insights for maintenance planning</li>
-                  <li>Lower downtime across critical systems</li>
-                </ul>
-              </div>
-              <div class="flow-visual">
-                <span class="visual-caption">Maintenance view</span>
-                <div class="line-dots"><span></span><span></span><span></span><span></span><span></span></div>
-                <div class="panel-card"><p>Maintenance window</p><strong>Planned automatically</strong></div>
-              </div>
-            </article>
+      <section class="section trust" id="trust">
+        <div class="section-head reveal">
+          <p class="eyebrow">Startup Trust</p>
+          <h2>Measured results from real deployments</h2>
+        </div>
+        <div class="stats-grid">
+          <article class="reveal"><strong data-count="240">0</strong><span>Clients Supported</span></article>
+          <article class="reveal"><strong data-count="1800">0</strong><span>Threats Neutralized / Month</span></article>
+          <article class="reveal"><strong data-count="520">0</strong><span>Systems Monitored 24/7</span></article>
+          <article class="reveal"><strong data-count="22000">0</strong><span>Devices Under Intelligence</span></article>
+        </div>
+      </section>
 
-            <article class="flow-block reverse reveal">
-              <div class="flow-text">
-                <span class="kicker">Automation</span>
-                <h3>Simple workflows that remove repetitive work</h3>
-                <p>Automation helps teams move faster by handling repetitive actions, routing decisions, and routine updates without confusion.</p>
-                <ul>
-                  <li>Workflow triggers connected to real data</li>
-                  <li>Less manual work for support teams</li>
-                  <li>Faster operations with clear control</li>
-                </ul>
-              </div>
-              <div class="flow-visual">
-                <span class="visual-caption">Automation engine</span>
-                <div class="visual-grid">
-                  <div class="mini-kpi"><p>Tasks</p><strong>41 active</strong></div>
-                  <div class="mini-kpi"><p>Approvals</p><strong>Streamlined</strong></div>
-                  <div class="mini-kpi"><p>Routing</p><strong>Policy-based</strong></div>
-                  <div class="mini-kpi"><p>Actions</p><strong>Instant</strong></div>
-                </div>
-              </div>
-            </article>
+      <section class="section support" id="support">
+        <div class="section-head reveal">
+          <p class="eyebrow">AI-Powered Support</p>
+          <h2>Unified support for businesses and individual devices</h2>
+        </div>
+        <div class="support-grid">
+          <article class="glass reveal"><h3>Business Solutions</h3><p>Infrastructure architecture, SOC monitoring, and AI workflow automation tailored to operational goals.</p></article>
+          <article class="glass reveal"><h3>Individual Device Support</h3><p>Smart diagnostics, malware defense, optimization routines, and proactive device health assistance.</p></article>
+        </div>
+      </section>
+
+      <section class="section cta-final reveal" id="final-cta">
+        <h2>Ready to Build Intelligent Systems?</h2>
+        <p>Tell us your challenge. We will design a practical AI roadmap for secure growth.</p>
+        <a class="btn btn-primary magnetic" href="/contact/index.html">Start a Consultation</a>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <p>AI Infrastructure & Intelligent Systems Startup • SAS INFOLABS</p>
+    </footer>
 
             <article class="flow-block reveal">
               <div class="flow-text">

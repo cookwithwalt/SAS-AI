@@ -3,46 +3,52 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Explore the SAS INFOLABS platform experience for health, alerts, performance, and automation." />
+    <meta name="description" content="Explore the SAS INFOLABS AI platform experience for infrastructure, security, automation, and monitoring." />
     <title>Platform | SAS INFOLABS</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="/styles/main.css" />
+    <link rel="stylesheet" href="/assets/styles.css" />
   </head>
   <body>
-    <div class="page-shell">
-      <span class="soft-light a" aria-hidden="true"></span>
-      <span class="soft-light b" aria-hidden="true"></span>
-      <header class="site-header">
-        <a class="brand" href="/index.html"><span class="brand-mark"></span><span>SAS INFOLABS</span></a>
-        <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
-        <nav>
-          <a href="/index.html">Home</a>
-          <a href="/platform/index.html" class="active">Product</a>
-          <a href="/services/index.html">Services</a>
-          <a href="/labs/index.html">Labs</a>
-          <a href="/technology/index.html">Technology</a>
-          <a href="/contact/index.html">Contact</a>
-        </nav>
-      </header>
-      <main>
-        <section class="content-hero reveal">
-          <div class="content-hero-inner">
-            <span class="pill">Platform</span>
-            <h1>One calm control layer for modern operations</h1>
-            <p>Our platform brings system health, alerts, performance, and automation into one simple product experience.</p>
+    <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="ambient-bg" aria-hidden="true"><span class="orb orb-a"></span><span class="orb orb-b"></span><canvas id="neuralCanvas"></canvas></div>
+    <header class="site-header glass">
+      <a class="brand" href="/index.html"><span class="brand-mark"></span><span>SAS INFOLABS</span></a>
+      <button class="menu-toggle" aria-label="Toggle navigation">☰</button>
+      <nav>
+        <a href="/index.html">Home</a>
+        <a class="active" href="/platform/index.html">Platform</a>
+        <a href="/services/index.html">Services</a>
+        <a href="/labs/index.html">Labs</a>
+        <a href="/technology/index.html">Technology</a>
+        <a href="/contact/index.html">Contact</a>
+      </nav>
+    </header>
+    <main class="page-main">
+      <section class="section reveal">
+        <div class="section-head">
+          <p class="eyebrow">Platform Experience</p>
+          <h1>One command layer for infrastructure, security, and device intelligence</h1>
+          <p>Designed like a modern SaaS product with clear telemetry, action-ready alerts, and AI-assisted operations.</p>
+        </div>
+        <div class="dashboard-shell glass">
+          <div class="dashboard-side">
+            <span class="panel-kicker">Platform Benefits</span>
+            <h3>Why it feels product-first</h3>
+            <p>Every panel turns infrastructure and security signals into simple operational decisions.</p>
           </div>
-        </section>
-        <section class="page-grid">
-          <article class="content-panel reveal"><h3>Health overview</h3><p>Track uptime, service condition, and capacity without overwhelming your team.</p></article>
-          <article class="content-panel reveal"><h3>Alert visibility</h3><p>Focus on the few things that matter instead of noisy dashboards.</p></article>
-          <article class="content-panel reveal"><h3>Performance clarity</h3><p>See how systems are working and where to improve them next.</p></article>
-          <article class="content-panel reveal"><h3>Automation layer</h3><p>Move routine work into dependable workflows with clear controls.</p></article>
-        </section>
-      </main>
-      <footer class="site-footer"><p>Platform thinking, calm execution.</p></footer>
-    </div>
-    <script src="/scripts/main.js"></script>
+          <div class="dashboard">
+            <article><h3>Ops Center</h3><p>Unified health, cost, and performance visibility</p></article>
+            <article><h3>Threat Graph</h3><p>Live anomaly scoring with automated escalation</p></article>
+            <article><h3>Automation Hub</h3><p>Workflow actions executed without manual follow-up</p></article>
+            <article><h3>Insight Layer</h3><p>AI-generated summaries for leadership and teams</p></article>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><p>Modern AI platform experience for operational teams.</p></footer>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+    <script src="/assets/app.js"></script>
   </body>
 </html>

@@ -1,7 +1,6 @@
 const header = document.querySelector('.site-header');
 const menuToggle = document.querySelector('.menu-toggle');
 const nav = document.querySelector('nav');
-const navLinks = nav ? [...nav.querySelectorAll('a[href^="#"]')] : [];
 
 if (menuToggle && header) {
   menuToggle.addEventListener('click', () => header.classList.toggle('open'));
@@ -17,7 +16,10 @@ const revealEls = document.querySelectorAll('.reveal');
 const observer = new IntersectionObserver(
   (entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) entry.target.classList.add('is-visible');
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = 1;
+        entry.target.style.transform = 'translateY(0)';
+      }
     });
   },
   { threshold: 0.16 }
@@ -33,39 +35,6 @@ if (window.gsap) {
     yoyo: true,
     ease: 'sine.inOut'
   });
-
-  gsap.from('.hero-copy-wrap > *', {
-    y: 16,
-    opacity: 0,
-    duration: 0.8,
-    stagger: 0.08,
-    ease: 'power2.out'
-  });
-
-  gsap.from('.hero-stage', {
-    y: 24,
-    opacity: 0,
-    duration: 1,
-    ease: 'power2.out'
-  });
-}
-
-const sections = navLinks
-  .map((link) => document.querySelector(link.getAttribute('href')))
-  .filter(Boolean);
-
-if (sections.length) {
-  const sectionObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      const id = `#${entry.target.id}`;
-      navLinks.forEach((link) => {
-        link.classList.toggle('active', link.getAttribute('href') === id);
-      });
-    });
-  }, { rootMargin: '-35% 0px -45% 0px' });
-
-  sections.forEach((section) => sectionObserver.observe(section));
 }
 
 const flowDescription = document.getElementById('flowDescription');
@@ -98,7 +67,6 @@ const counterObserver = new IntersectionObserver((entries, obs) => {
       entry.target.textContent = Math.floor(progress * target).toLocaleString();
       if (progress < 1) requestAnimationFrame(tick);
     };
-
     requestAnimationFrame(tick);
     obs.unobserve(entry.target);
   });
@@ -109,13 +77,11 @@ counters.forEach((counter) => counterObserver.observe(counter));
 const magneticButtons = document.querySelectorAll('.magnetic');
 magneticButtons.forEach((btn) => {
   btn.addEventListener('mousemove', (event) => {
-    if (window.matchMedia('(max-width: 760px)').matches) return;
     const rect = btn.getBoundingClientRect();
     const x = event.clientX - rect.left - rect.width / 2;
     const y = event.clientY - rect.top - rect.height / 2;
     btn.style.transform = `translate(${x * 0.08}px, ${y * 0.08}px)`;
   });
-
   btn.addEventListener('mouseleave', () => {
     btn.style.transform = '';
   });
@@ -124,41 +90,25 @@ magneticButtons.forEach((btn) => {
 const tiltCards = document.querySelectorAll('.tilt');
 tiltCards.forEach((card) => {
   card.addEventListener('mousemove', (event) => {
-    if (window.matchMedia('(max-width: 980px)').matches) return;
     const rect = card.getBoundingClientRect();
     const x = (event.clientX - rect.left) / rect.width - 0.5;
     const y = (event.clientY - rect.top) / rect.height - 0.5;
     card.style.transform = `perspective(700px) rotateX(${y * -5}deg) rotateY(${x * 7}deg) translateY(-4px)`;
   });
-
   card.addEventListener('mouseleave', () => {
     card.style.transform = '';
   });
 });
 
-const cursorGlow = document.querySelector('.cursor-glow');
-if (cursorGlow && window.matchMedia('(pointer:fine)').matches) {
-  window.addEventListener('pointermove', (event) => {
-    cursorGlow.style.left = `${event.clientX}px`;
-    cursorGlow.style.top = `${event.clientY}px`;
-  });
-}
-
 const canvas = document.getElementById('neuralCanvas');
 if (canvas) {
   const ctx = canvas.getContext('2d');
-  const nodes = Array.from({ length: 38 }, () => ({
-    x: Math.random(),
-    y: Math.random(),
-    vx: (Math.random() - 0.5) * 0.002,
-    vy: (Math.random() - 0.5) * 0.002
-  }));
+  const nodes = Array.from({ length: 38 }, () => ({ x: Math.random(), y: Math.random(), vx: (Math.random() - 0.5) * 0.002, vy: (Math.random() - 0.5) * 0.002 }));
 
   const resize = () => {
-    const dpr = Math.min(window.devicePixelRatio || 1, 2);
-    canvas.width = Math.floor(window.innerWidth * dpr);
-    canvas.height = Math.floor(window.innerHeight * dpr);
-    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    canvas.width = window.innerWidth * window.devicePixelRatio;
+    canvas.height = window.innerHeight * window.devicePixelRatio;
+    ctx.scale(window.devicePixelRatio, window.devicePixelRatio);
   };
 
   const draw = () => {
@@ -172,19 +122,21 @@ if (canvas) {
       if (node.x < 0 || node.x > 1) node.vx *= -1;
       if (node.y < 0 || node.y > 1) node.vy *= -1;
 
-      ctx.fillStyle = 'rgba(119, 183, 255, 0.58)';
+      const px = node.x * w;
+      const py = node.y * h;
+      ctx.fillStyle = 'rgba(119, 183, 255, 0.65)';
       ctx.beginPath();
-      ctx.arc(node.x * w, node.y * h, 1.45, 0, Math.PI * 2);
+      ctx.arc(px, py, 1.5, 0, Math.PI * 2);
       ctx.fill();
     });
 
-    for (let i = 0; i < nodes.length; i += 1) {
-      for (let j = i + 1; j < nodes.length; j += 1) {
+    for (let i = 0; i < nodes.length; i++) {
+      for (let j = i + 1; j < nodes.length; j++) {
         const dx = (nodes[i].x - nodes[j].x) * w;
         const dy = (nodes[i].y - nodes[j].y) * h;
         const dist = Math.hypot(dx, dy);
-        if (dist < 150) {
-          ctx.strokeStyle = `rgba(133, 184, 255, ${0.18 - dist / 1000})`;
+        if (dist < 130) {
+          ctx.strokeStyle = `rgba(133, 184, 255, ${0.16 - dist / 1000})`;
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(nodes[i].x * w, nodes[i].y * h);
@@ -193,7 +145,6 @@ if (canvas) {
         }
       }
     }
-
     requestAnimationFrame(draw);
   };
 
