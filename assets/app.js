@@ -33,6 +33,21 @@ if (window.gsap) {
     yoyo: true,
     ease: 'sine.inOut'
   });
+
+  gsap.from('.hero-copy-wrap > *', {
+    y: 16,
+    opacity: 0,
+    duration: 0.8,
+    stagger: 0.08,
+    ease: 'power2.out'
+  });
+
+  gsap.from('.hero-stage', {
+    y: 24,
+    opacity: 0,
+    duration: 1,
+    ease: 'power2.out'
+  });
 }
 
 const sections = navLinks
@@ -75,7 +90,7 @@ const counterObserver = new IntersectionObserver((entries, obs) => {
   entries.forEach((entry) => {
     if (!entry.isIntersecting) return;
     const target = Number(entry.target.dataset.count);
-    const duration = 1100;
+    const duration = 1200;
     const start = performance.now();
 
     const tick = (now) => {
@@ -83,6 +98,7 @@ const counterObserver = new IntersectionObserver((entries, obs) => {
       entry.target.textContent = Math.floor(progress * target).toLocaleString();
       if (progress < 1) requestAnimationFrame(tick);
     };
+
     requestAnimationFrame(tick);
     obs.unobserve(entry.target);
   });
@@ -99,6 +115,7 @@ magneticButtons.forEach((btn) => {
     const y = event.clientY - rect.top - rect.height / 2;
     btn.style.transform = `translate(${x * 0.08}px, ${y * 0.08}px)`;
   });
+
   btn.addEventListener('mouseleave', () => {
     btn.style.transform = '';
   });
@@ -113,6 +130,7 @@ tiltCards.forEach((card) => {
     const y = (event.clientY - rect.top) / rect.height - 0.5;
     card.style.transform = `perspective(700px) rotateX(${y * -5}deg) rotateY(${x * 7}deg) translateY(-4px)`;
   });
+
   card.addEventListener('mouseleave', () => {
     card.style.transform = '';
   });
@@ -129,7 +147,7 @@ if (cursorGlow && window.matchMedia('(pointer:fine)').matches) {
 const canvas = document.getElementById('neuralCanvas');
 if (canvas) {
   const ctx = canvas.getContext('2d');
-  const nodes = Array.from({ length: 34 }, () => ({
+  const nodes = Array.from({ length: 38 }, () => ({
     x: Math.random(),
     y: Math.random(),
     vx: (Math.random() - 0.5) * 0.002,
@@ -154,9 +172,9 @@ if (canvas) {
       if (node.x < 0 || node.x > 1) node.vx *= -1;
       if (node.y < 0 || node.y > 1) node.vy *= -1;
 
-      ctx.fillStyle = 'rgba(119, 183, 255, 0.62)';
+      ctx.fillStyle = 'rgba(119, 183, 255, 0.58)';
       ctx.beginPath();
-      ctx.arc(node.x * w, node.y * h, 1.4, 0, Math.PI * 2);
+      ctx.arc(node.x * w, node.y * h, 1.45, 0, Math.PI * 2);
       ctx.fill();
     });
 
@@ -165,8 +183,8 @@ if (canvas) {
         const dx = (nodes[i].x - nodes[j].x) * w;
         const dy = (nodes[i].y - nodes[j].y) * h;
         const dist = Math.hypot(dx, dy);
-        if (dist < 140) {
-          ctx.strokeStyle = `rgba(133, 184, 255, ${0.17 - dist / 1000})`;
+        if (dist < 150) {
+          ctx.strokeStyle = `rgba(133, 184, 255, ${0.18 - dist / 1000})`;
           ctx.lineWidth = 1;
           ctx.beginPath();
           ctx.moveTo(nodes[i].x * w, nodes[i].y * h);
